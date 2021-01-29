@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h3>You Realy want to Delete the {{order.product}} order </h3>
+    <form method="POST">
+        {% csrf_token %}
+        <a href="{% url 'home' %}" class="btn btn-success btn-sm">Cancel</a>
+        <input type="submit" name="Confirm" class="btn btn-danger btn-sm">
+    </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
